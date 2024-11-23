@@ -1,0 +1,78 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="16dp"
+    tools:context=".Activity.WinCertificateActivity">
+
+    <!-- Header Question -->
+    <TextView
+        android:id="@+id/tv_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Tell me About Yourself?"
+        android:textSize="22sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:padding="8dp"
+        android:background="@drawable/background_rounded_card"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+         />
+
+    <!-- Answer Input -->
+    <EditText
+        android:id="@+id/et_answer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:hint="Write your answer here..."
+        android:inputType="textMultiLine"
+        android:gravity="top|start"
+        android:background="@drawable/background_input_field"
+        android:padding="16dp"
+        android:textColor="@color/text_primary"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/tv_question"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.4"
+         />
+
+    <!-- Countdown Timer -->
+    <TextView
+        android:id="@+id/tv_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="30 seconds remaining"
+        android:textSize="16sp"
+        android:textColor="@color/text_secondary"
+        android:textStyle="italic"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/et_answer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+       />
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:enabled="false"
+        android:backgroundTint="@color/button_disabled"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:elevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_timer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="ButtonStyle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

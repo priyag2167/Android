@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Activity.login">
+
+        <!-- Image 1 (Logo or Background Image) -->
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/img1" />
+
+        <!-- Image 2 (Sign Up Background) -->
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/img2" />
+        <!-- Login Header -->
+        <TextView
+            android:id="@+id/loginHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_115sdp"
+            android:layout_marginTop="@dimen/_115sdp"
+            android:text="Login"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_27ssp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Phone Number Prompt -->
+        <TextView
+            android:id="@+id/phonePrompt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_200sdp"
+            android:text="Phone Number"
+            android:textColor="#9796A1"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- CardView for Phone Number -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/phoneNumberCardView"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/phonePrompt">
+
+                <EditText
+                    android:id="@+id/phoneNumberEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:drawableStart="@drawable/icphone"
+                    android:drawablePadding="10dp"
+                    android:hint="Phone Number"
+                    android:inputType="phone"
+                    android:padding="@dimen/_15sdp"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Send OTP Button -->
+        <Button
+            android:id="@+id/sendOtpBtn"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:backgroundTint="@color/purple"
+            android:text="Send OTP"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16ssp"
+            android:layout_marginTop="@dimen/_25sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/phoneNumberCardView" />
+
+        <!-- Google Sign Up Image -->
+        <ImageView
+            android:id="@+id/google"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_60sdp"
+            app:layout_constraintBottom_toTopOf="@+id/alreadyAccount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sendOtpBtn"
+            app:srcCompat="@drawable/google" />
+
+        <!-- Google Text -->
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Google"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/google" />
+
+        <!-- OTP Input Field (Initially Hidden) -->
+        <EditText
+            android:id="@+id/otpField"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:background="@android:color/transparent"
+            android:drawableStart="@drawable/icotp"
+            android:drawablePadding="10dp"
+            android:hint="Enter OTP"
+            android:inputType="number"
+            android:padding="@dimen/_15sdp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sendOtpBtn" />
+
+        <!-- OTP Verification Button (Initially Hidden) -->
+        <Button
+            android:id="@+id/verifyOtpBtn"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:backgroundTint="@color/purple"
+            android:text="Verify OTP"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16ssp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/otpField" />
+
+        <!-- Already Have an Account? -->
+        <TextView
+            android:id="@+id/alreadyAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already have an account?"
+            android:textSize="@dimen/_14ssp"
+            android:layout_marginTop="@dimen/_150sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.352"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sendOtpBtn" />
+
+        <!-- Login Redirect Text -->
+        <TextView
+            android:id="@+id/loginRedirect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Login"
+            android:textColor="@color/purple"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/_150sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/alreadyAccount"
+            app:layout_constraintTop_toBottomOf="@id/sendOtpBtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
